@@ -1,24 +1,28 @@
 package org.grhncnrbs.blog.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @NoArgsConstructor
 public class UpdateBlogRequest {
 
-    @Id
+    @NotBlank(message = "blogId is required parameter")
     private Long blogId;
+
+    @NotBlank(message = "title is required parameter")
     private String title;
+
+    @NotBlank(message = "description is required parameter")
     private String description;
+
+    @NotBlank(message = "publish is required parameter")
     private Boolean publish;
+
+    @NotBlank(message = "userId is required parameter")
+    private Long userId;
 
 }
