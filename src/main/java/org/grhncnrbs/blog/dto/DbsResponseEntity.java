@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class DbsResponseEntity<T>{
 
-    T date;
+    T data;
     private String message;
 
 }
