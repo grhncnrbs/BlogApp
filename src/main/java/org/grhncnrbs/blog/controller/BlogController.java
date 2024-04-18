@@ -25,11 +25,9 @@ public class BlogController {
 
     @PostMapping("v1/blogs")
     public ResponseEntity<DbsResponseEntity> createBlogCall(@Valid @RequestBody CreateBlogRequest createBlogRequest) {
-        Blog blog = new Blog();
         DbsResponseEntity dbsResponseEntity = new DbsResponseEntity();
         try {
-            BeanUtils.copyProperties(createBlogRequest, blog);
-            Blog createdBlog = blogService.createBlog(blog);
+            Blog createdBlog = blogService.createBlog(createBlogRequest);
             dbsResponseEntity.setMessage("Blog created successfully.");
             dbsResponseEntity.setData(createdBlog);
             return ResponseEntity.ok(dbsResponseEntity);
@@ -40,11 +38,9 @@ public class BlogController {
 
     @PutMapping("v1/blogs")
     public ResponseEntity<DbsResponseEntity> updateBlogCall(@Valid @RequestBody UpdateBlogRequest updateBlogRequest){
-        Blog blog = new Blog();
         DbsResponseEntity dbsResponseEntity = new DbsResponseEntity();
         try {
-            BeanUtils.copyProperties(updateBlogRequest, blog);
-            Blog updatedBlog = blogService.updateBlog(blog);
+            Blog updatedBlog = blogService.updateBlog(updateBlogRequest);
             dbsResponseEntity.setMessage("Blog updated successfully.");
             dbsResponseEntity.setData(updatedBlog);
             return ResponseEntity.ok(dbsResponseEntity);
@@ -53,7 +49,7 @@ public class BlogController {
         }
     }
 
-    @GetMapping("v1/blogs/{blogId]")
+    @GetMapping("v1/blogs/{blogId}")
     public ResponseEntity<DbsResponseEntity> getBlogCall(@PathVariable Long blogId){
         Blog blog = new Blog();
         DbsResponseEntity dbsResponseEntity = new DbsResponseEntity();
@@ -67,7 +63,7 @@ public class BlogController {
         }
     }
 
-    @DeleteMapping("v1/blogs/{blogId]")
+    @DeleteMapping("v1/blogs/{blogId}")
     public ResponseEntity<DbsResponseEntity> deleteBlogCall(@PathVariable Long blogId){
         Blog blog = new Blog();
         DbsResponseEntity dbsResponseEntity = new DbsResponseEntity();

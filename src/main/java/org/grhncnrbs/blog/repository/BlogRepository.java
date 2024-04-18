@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface BlogRepository extends JpaRepository<Long, Blog> {
+public interface BlogRepository extends JpaRepository<Blog, Long> {
 
     Blog deleteByBlogId(Long blogId);
 

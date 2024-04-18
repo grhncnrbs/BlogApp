@@ -18,5 +18,6 @@ public class CreateBlogRequest {
     private String title;
     private String description;
     private Boolean publish;
+    private Long userId;
 
 }

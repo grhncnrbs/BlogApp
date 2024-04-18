@@ -26,11 +26,11 @@ public class CommentService {
         return commentRepository.deleteByCommentId(commentId);
     }
 
-    public List<Comment> getComment(Long commentId, Pageable pageable) throws Exception {
-        return commentRepository.findByBlogId(commentId, pageable);
+    public List<Comment> getComment(Long commentId) throws Exception {
+        return commentRepository.findByBlogId(commentId);
     }
 
-    public List<Comment> getBlogs(Long blogId, Pageable pageable) throws Exception {
-        return commentRepository.findByBlogId(blogId, pageable);
+    public List<Comment> getBlogs(Long blogId) throws Exception {
+        return commentRepository.findByBlogId(blogId);
     }
 }
