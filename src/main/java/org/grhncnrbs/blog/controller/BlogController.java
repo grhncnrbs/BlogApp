@@ -1,10 +1,12 @@
 package org.grhncnrbs.blog.controller;
 
 import jakarta.validation.Valid;
+import org.apache.commons.lang3.ObjectUtils;
 import org.grhncnrbs.blog.dto.CommonPaginationRequest;
 import org.grhncnrbs.blog.dto.CreateBlogRequest;
 import org.grhncnrbs.blog.dto.DbsResponseEntity;
 import org.grhncnrbs.blog.dto.UpdateBlogRequest;
+import org.grhncnrbs.blog.exception.RecordNotFoundException;
 import org.grhncnrbs.blog.model.Blog;
 import org.grhncnrbs.blog.service.BlogService;
 import org.springframework.beans.BeanUtils;
@@ -31,26 +33,31 @@ public class BlogController {
             dbsResponseEntity.setMessage("Blog created successfully.");
             dbsResponseEntity.setData(createdBlog);
             return ResponseEntity.ok(dbsResponseEntity);
-        }catch (Exception exception) {
-            return  ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        } catch (Exception exception) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 
     @PutMapping("v1/blogs")
-    public ResponseEntity<DbsResponseEntity> updateBlogCall(@Valid @RequestBody UpdateBlogRequest updateBlogRequest){
+    public ResponseEntity<DbsResponseEntity> updateBlogCall(@Valid @RequestBody UpdateBlogRequest updateBlogRequest) {
         DbsResponseEntity dbsResponseEntity = new DbsResponseEntity();
         try {
             Blog updatedBlog = blogService.updateBlog(updateBlogRequest);
+            if (ObjectUtils.isEmpty(updatedBlog)) {
+                throw new RecordNotFoundException("Record not present in database");
+            }
             dbsResponseEntity.setMessage("Blog updated successfully.");
             dbsResponseEntity.setData(updatedBlog);
             return ResponseEntity.ok(dbsResponseEntity);
-        }catch (Exception exception) {
+        } catch (RecordNotFoundException exception) {
+            throw exception;
+        } catch (Exception exception) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 
     @GetMapping("v1/blogs/{blogId}")
-    public ResponseEntity<DbsResponseEntity> getBlogCall(@PathVariable Long blogId){
+    public ResponseEntity<DbsResponseEntity> getBlogCall(@PathVariable Long blogId) {
         Blog blog = new Blog();
         DbsResponseEntity dbsResponseEntity = new DbsResponseEntity();
         try {
@@ -58,20 +65,19 @@ public class BlogController {
             dbsResponseEntity.setMessage("Blogs getted successfully.");
             dbsResponseEntity.setData(gettedBlog);
             return ResponseEntity.ok(dbsResponseEntity);
-        }catch (Exception exception) {
+        } catch (Exception exception) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 
     @DeleteMapping("v1/blogs/{blogId}")
-    public ResponseEntity<DbsResponseEntity> deleteBlogCall(@PathVariable Long blogId){
-        Blog blog = new Blog();
+    public ResponseEntity<DbsResponseEntity> deleteBlogCall(@PathVariable Long blogId) {
         DbsResponseEntity dbsResponseEntity = new DbsResponseEntity();
         try {
-            blogService.getBlog(blogId);
+            blogService.deleteBlog(blogId);
             dbsResponseEntity.setMessage("Blog deleted successfully.");
             return ResponseEntity.ok(dbsResponseEntity);
-        }catch (Exception exception) {
+        } catch (Exception exception) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
@@ -79,9 +85,8 @@ public class BlogController {
     @GetMapping("v1/blogs")
     public ResponseEntity<DbsResponseEntity> getBlogsCall(@RequestParam(defaultValue = "0") Integer pageNo,
                                                           @RequestParam(defaultValue = "10") Integer pageSize,
-                                                          @RequestParam(defaultValue = "id") String sortBy,
-                                                          @RequestParam(defaultValue = "1") Long userId){
-        Blog blog = new Blog();
+                                                          @RequestParam(defaultValue = "userId") String sortBy,
+                                                          @RequestParam(defaultValue = "1") Long userId) {
         CommonPaginationRequest commonPaginationRequest = new CommonPaginationRequest();
         commonPaginationRequest.setPageNo(pageNo);
         commonPaginationRequest.setPageSize(pageSize);
@@ -93,7 +98,7 @@ public class BlogController {
             dbsResponseEntity.setMessage("Blogs getted successfully.");
             dbsResponseEntity.setData(gettedBlogs);
             return ResponseEntity.ok(dbsResponseEntity);
-        }catch (Exception exception) {
+        } catch (Exception exception) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }

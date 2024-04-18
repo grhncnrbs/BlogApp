@@ -1,5 +1,6 @@
 package org.grhncnrbs.blog.service;
 
+import org.apache.commons.lang3.ObjectUtils;
 import org.grhncnrbs.blog.dto.CommonPaginationRequest;
 import org.grhncnrbs.blog.dto.CreateBlogRequest;
 import org.grhncnrbs.blog.dto.UpdateBlogRequest;
@@ -31,6 +32,9 @@ public class BlogService {
 
     public Blog updateBlog(UpdateBlogRequest updateBlogRequest)throws Exception{
         Blog blog = blogRepository.findByBlogId(updateBlogRequest.getBlogId());
+        if(ObjectUtils.isEmpty(blog)) {
+            return null;
+        }
         BeanUtils.copyProperties(updateBlogRequest,blog);
         blog.setCreatedAt(LocalDateTime.now());
         blog.setUpdatedAt(LocalDateTime.now());
