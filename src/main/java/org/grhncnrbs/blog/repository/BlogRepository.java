@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface BlogRepository extends JpaRepository<Blog, Long> {
 
-    Blog deleteByBlogId(Long blogId);
+    void deleteById(Long blogId);
 
     List<Blog> findByUserId(Long blogId, Pageable pageable);
 

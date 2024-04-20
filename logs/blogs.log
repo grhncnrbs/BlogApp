@@ -1,0 +1,34 @@
+[INFO ] 2024-04-20 22:58:40.466 [background-preinit] Version - HV000001: Hibernate Validator 8.0.1.Final
+[INFO ] 2024-04-20 22:58:40.479 [restartedMain] BlogApplication - Starting BlogApplication using Java 21.0.2 with PID 3648 (/Users/grhncnrbs/Desktop/Projects/blog/target/classes started by grhncnrbs in /Users/grhncnrbs/Desktop/Projects/blog)
+[INFO ] 2024-04-20 22:58:40.480 [restartedMain] BlogApplication - The following 1 profile is active: "dev"
+[INFO ] 2024-04-20 22:58:40.493 [restartedMain] DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2024-04-20 22:58:40.493 [restartedMain] DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2024-04-20 22:58:40.866 [restartedMain] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2024-04-20 22:58:40.886 [restartedMain] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 3 JPA repository interfaces.
+[INFO ] 2024-04-20 22:58:41.172 [restartedMain] TomcatWebServer - Tomcat initialized with port 8080 (http)
+[INFO ] 2024-04-20 22:58:41.178 [restartedMain] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2024-04-20 22:58:41.178 [restartedMain] StandardService - Starting service [Tomcat]
+[INFO ] 2024-04-20 22:58:41.178 [restartedMain] StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+[INFO ] 2024-04-20 22:58:41.195 [restartedMain] [/api] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2024-04-20 22:58:41.195 [restartedMain] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 701 ms
+[INFO ] 2024-04-20 22:58:41.310 [restartedMain] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2024-04-20 22:58:41.331 [restartedMain] Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+[INFO ] 2024-04-20 22:58:41.343 [restartedMain] RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[INFO ] 2024-04-20 22:58:41.427 [restartedMain] SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO ] 2024-04-20 22:58:41.438 [restartedMain] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2024-04-20 22:58:41.502 [restartedMain] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1c613233
+[INFO ] 2024-04-20 22:58:41.503 [restartedMain] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2024-04-20 22:58:41.866 [restartedMain] JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO ] 2024-04-20 22:58:41.896 [restartedMain] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2024-04-20 22:58:42.135 [restartedMain] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2024-04-20 22:58:42.478 [restartedMain] OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2024-04-20 22:58:42.481 [restartedMain] EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+[INFO ] 2024-04-20 22:58:42.513 [restartedMain] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2024-04-20 22:58:42.520 [restartedMain] TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+[INFO ] 2024-04-20 22:58:42.528 [restartedMain] BlogApplication - Started BlogApplication in 2.199 seconds (process running for 2.514)
+[INFO ] 2024-04-20 22:58:42.844 [RMI TCP Connection(2)-192.168.1.34] [/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2024-04-20 22:58:42.844 [RMI TCP Connection(2)-192.168.1.34] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2024-04-20 22:58:42.845 [RMI TCP Connection(2)-192.168.1.34] DispatcherServlet - Completed initialization in 1 ms
+[INFO ] 2024-04-20 22:58:55.767 [http-nio-8080-exec-5] AbstractOpenApiResource - Init duration for springdoc-openapi is: 111 ms
+[INFO ] 2024-04-20 23:00:15.764 [http-nio-8080-exec-8] BlogController - BlogController: createBlogCall request received with body : org.grhncnrbs.blog.dto.CreateBlogRequest@76f59a00
+[INFO ] 2024-04-20 23:00:15.804 [http-nio-8080-exec-8] BlogController - BlogController: createBlogCall record saved successfully with blogId : 4

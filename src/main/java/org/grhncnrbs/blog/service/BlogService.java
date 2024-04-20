@@ -42,7 +42,7 @@ public class BlogService {
     }
 
     public void deleteBlog(Long blogId) throws Exception {
-        blogRepository.deleteByBlogId(blogId);
+        blogRepository.deleteById(blogId);
     }
 
     public Blog getBlog(Long blogId) throws Exception {

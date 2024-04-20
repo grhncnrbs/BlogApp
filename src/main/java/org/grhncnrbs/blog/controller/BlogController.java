@@ -1,6 +1,7 @@
 package org.grhncnrbs.blog.controller;
 
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.grhncnrbs.blog.dto.CommonPaginationRequest;
 import org.grhncnrbs.blog.dto.CreateBlogRequest;
 import org.grhncnrbs.blog.dto.DbsResponseEntity;
@@ -19,6 +20,7 @@ import java.util.List;
 
 @RestController
 @Validated
+@Slf4j
 public class BlogController {
 
     @Autowired
@@ -27,12 +29,15 @@ public class BlogController {
     @PostMapping("v1/blogs") //create blog
     public ResponseEntity<DbsResponseEntity> createBlogCall(@Valid @RequestBody CreateBlogRequest createBlogRequest) {
         DbsResponseEntity dbsResponseEntity = new DbsResponseEntity();
+        log.info("BlogController: createBlogCall request received with body : {}", createBlogRequest.toString());
         try {
             Blog createdBlog = blogService.createBlog(createBlogRequest);
+            log.info("BlogController: createBlogCall record saved successfully with blogId : {}", createdBlog.getBlogId());
             dbsResponseEntity.setMessage("Blog created successfully.");
             dbsResponseEntity.setData(createdBlog);
             return ResponseEntity.ok(dbsResponseEntity);
         } catch (Exception exception) {
+            log.debug("BlogController: createBlogCall something went wrong : {}");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
@@ -75,6 +80,7 @@ public class BlogController {
     @PutMapping("v1/blogs") // update blog
     public ResponseEntity<DbsResponseEntity> updateBlogCall(@Valid @RequestBody UpdateBlogRequest updateBlogRequest) {
         DbsResponseEntity dbsResponseEntity = new DbsResponseEntity();
+        log.info("BlogController: updateBlogCall request received with body : {}", updateBlogRequest.toString());
         try {
             Blog updatedBlog = blogService.updateBlog(updateBlogRequest);
             if (ObjectUtils.isEmpty(updatedBlog)) {
@@ -84,8 +90,10 @@ public class BlogController {
             dbsResponseEntity.setData(updatedBlog);
             return ResponseEntity.ok(dbsResponseEntity);
         } catch (RecordNotFoundException exception) {
+            log.debug("BlogController: updateBlogCall record not found for blogId : {}", exception);
             throw exception;
         } catch (Exception exception) {
+            log.debug("BlogController: updateBlogCall something went wrong : {}", exception);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
