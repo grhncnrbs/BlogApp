@@ -41,8 +41,8 @@ public class BlogService {
         return blogRepository.save(blog);
     }
 
-    public Blog deleteBlog(Long blogId) throws Exception {
-        return blogRepository.deleteByBlogId(blogId);
+    public void deleteBlog(Long blogId) throws Exception {
+        blogRepository.deleteByBlogId(blogId);
     }
 
     public Blog getBlog(Long blogId) throws Exception {
