@@ -32,3 +32,32 @@
 [INFO ] 2024-04-20 22:58:55.767 [http-nio-8080-exec-5] AbstractOpenApiResource - Init duration for springdoc-openapi is: 111 ms
 [INFO ] 2024-04-20 23:00:15.764 [http-nio-8080-exec-8] BlogController - BlogController: createBlogCall request received with body : org.grhncnrbs.blog.dto.CreateBlogRequest@76f59a00
 [INFO ] 2024-04-20 23:00:15.804 [http-nio-8080-exec-8] BlogController - BlogController: createBlogCall record saved successfully with blogId : 4
+[INFO ] 2024-04-20 23:03:14.807 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2024-04-20 23:03:14.810 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2024-04-20 23:03:14.811 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 2024-04-21 15:54:14.144 [background-preinit] Version - HV000001: Hibernate Validator 8.0.1.Final
+[INFO ] 2024-04-21 15:54:14.159 [main] BlogControllerTest - Starting BlogControllerTest using Java 21.0.2 with PID 2215 (started by grhncnrbs in /Users/grhncnrbs/Desktop/Projects/blog)
+[INFO ] 2024-04-21 15:54:14.160 [main] BlogControllerTest - The following 1 profile is active: "dev"
+[INFO ] 2024-04-21 15:54:15.099 [main] SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+[INFO ] 2024-04-21 15:54:15.100 [main] TestDispatcherServlet - Initializing Servlet ''
+[INFO ] 2024-04-21 15:54:15.101 [main] TestDispatcherServlet - Completed initialization in 0 ms
+[INFO ] 2024-04-21 15:54:15.110 [main] BlogControllerTest - Started BlogControllerTest in 1.123 seconds (process running for 1.658)
+[INFO ] 2024-04-21 15:54:15.209 [main] BlogController - BlogController: updateBlogCall request received with body : UpdateBlogRequest(blogId=1002, title=Updated Spring Boot Blog Title., description=Updated Spring Boot Blog Description., publish=false, userId=1001)
+[INFO ] 2024-04-21 15:54:24.501 [background-preinit] Version - HV000001: Hibernate Validator 8.0.1.Final
+[INFO ] 2024-04-21 15:54:24.514 [main] BlogControllerTest - Starting BlogControllerTest using Java 21.0.2 with PID 2223 (started by grhncnrbs in /Users/grhncnrbs/Desktop/Projects/blog)
+[INFO ] 2024-04-21 15:54:24.516 [main] BlogControllerTest - The following 1 profile is active: "dev"
+[INFO ] 2024-04-21 15:54:25.363 [main] SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+[INFO ] 2024-04-21 15:54:25.363 [main] TestDispatcherServlet - Initializing Servlet ''
+[INFO ] 2024-04-21 15:54:25.364 [main] TestDispatcherServlet - Completed initialization in 0 ms
+[INFO ] 2024-04-21 15:54:25.373 [main] BlogControllerTest - Started BlogControllerTest in 1.029 seconds (process running for 1.511)
+[INFO ] 2024-04-21 15:54:25.478 [main] BlogController - BlogController: updateBlogCall request received with body : UpdateBlogRequest(blogId=101, title=Spring Boot Blog Title., description=Spring Boot Blog Description., publish=true, userId=1001)
+[INFO ] 2024-04-21 15:54:25.497 [main] BlogController - BlogController: updateBlogCall request received with body : UpdateBlogRequest(blogId=101, title=Spring Blog Title, description=Spring description, publish=true, userId=1001)
+[INFO ] 2024-04-21 15:54:25.502 [main] BlogController - BlogController: updateBlogCall request received with body : UpdateBlogRequest(blogId=1002, title=Updated Spring Boot Blog Title., description=Updated Spring Boot Blog Description., publish=false, userId=1001)
+[INFO ] 2024-04-21 15:54:57.277 [background-preinit] Version - HV000001: Hibernate Validator 8.0.1.Final
+[INFO ] 2024-04-21 15:54:57.293 [main] BlogControllerTest - Starting BlogControllerTest using Java 21.0.2 with PID 2233 (started by grhncnrbs in /Users/grhncnrbs/Desktop/Projects/blog)
+[INFO ] 2024-04-21 15:54:57.295 [main] BlogControllerTest - The following 1 profile is active: "dev"
+[INFO ] 2024-04-21 15:54:58.155 [main] SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+[INFO ] 2024-04-21 15:54:58.155 [main] TestDispatcherServlet - Initializing Servlet ''
+[INFO ] 2024-04-21 15:54:58.157 [main] TestDispatcherServlet - Completed initialization in 0 ms
+[INFO ] 2024-04-21 15:54:58.167 [main] BlogControllerTest - Started BlogControllerTest in 1.024 seconds (process running for 1.523)
+[INFO ] 2024-04-21 15:54:58.261 [main] BlogController - BlogController: updateBlogCall request received with body : UpdateBlogRequest(blogId=101, title=Spring Boot Blog Title., description=Spring Boot Blog Description., publish=true, userId=1001)
