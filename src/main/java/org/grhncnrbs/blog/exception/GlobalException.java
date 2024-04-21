@@ -1,5 +1,6 @@
 package org.grhncnrbs.blog.exception;
 
+import lombok.extern.slf4j.Slf4j;
 import org.grhncnrbs.blog.dto.DbsResponseEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
+@Slf4j
 public class GlobalException {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -26,5 +28,21 @@ public class GlobalException {
         DbsResponseEntity dbsResponseEntity = new DbsResponseEntity();
         dbsResponseEntity.setMessage(recordNotFoundException.getMessage());
         return new ResponseEntity<>(dbsResponseEntity, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(UserAlreadyRegisterException.class)
+    public ResponseEntity<DbsResponseEntity> handlingUserAlreadyRegisterException(UserAlreadyRegisterException  userAlreadyRegisterException) {
+        DbsResponseEntity dbsResponseEntity=new DbsResponseEntity();
+        dbsResponseEntity.setMessage(userAlreadyRegisterException.message);
+        log.debug("GlobalException:handleUserAlreadyRegisterException user already present in database.");
+        return new ResponseEntity<>(dbsResponseEntity,HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(AuthenticationFailedException.class)
+    public ResponseEntity<DbsResponseEntity> handleAuthenticationFailedException(AuthenticationFailedException  authenticationFailedException) {
+        DbsResponseEntity dbsResponseEntity=new DbsResponseEntity();
+        dbsResponseEntity.setMessage(authenticationFailedException.message);
+        log.debug("GlobalException:handleUserAlreadyRegisterException Authentication failed.");
+        return new ResponseEntity<>(dbsResponseEntity,HttpStatus.UNAUTHORIZED);
     }
 }

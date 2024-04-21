@@ -61,3 +61,58 @@
 [INFO ] 2024-04-21 15:54:58.157 [main] TestDispatcherServlet - Completed initialization in 0 ms
 [INFO ] 2024-04-21 15:54:58.167 [main] BlogControllerTest - Started BlogControllerTest in 1.024 seconds (process running for 1.523)
 [INFO ] 2024-04-21 15:54:58.261 [main] BlogController - BlogController: updateBlogCall request received with body : UpdateBlogRequest(blogId=101, title=Spring Boot Blog Title., description=Spring Boot Blog Description., publish=true, userId=1001)
+[INFO ] 2024-04-21 16:23:24.045 [background-preinit] Version - HV000001: Hibernate Validator 8.0.1.Final
+[INFO ] 2024-04-21 16:23:24.059 [main] BlogControllerTest - Starting BlogControllerTest using Java 21.0.2 with PID 2538 (started by grhncnrbs in /Users/grhncnrbs/Desktop/Projects/blog)
+[INFO ] 2024-04-21 16:23:24.060 [main] BlogControllerTest - The following 1 profile is active: "dev"
+[INFO ] 2024-04-21 16:23:24.969 [main] SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+[INFO ] 2024-04-21 16:23:24.969 [main] TestDispatcherServlet - Initializing Servlet ''
+[INFO ] 2024-04-21 16:23:24.970 [main] TestDispatcherServlet - Completed initialization in 0 ms
+[INFO ] 2024-04-21 16:23:24.981 [main] BlogControllerTest - Started BlogControllerTest in 1.079 seconds (process running for 1.626)
+[INFO ] 2024-04-21 16:23:25.084 [main] BlogController - BlogController: updateBlogCall request received with body : UpdateBlogRequest(blogId=101, title=Spring Boot Blog Title., description=Spring Boot Blog Description., publish=true, userId=1001)
+[INFO ] 2024-04-21 18:17:23.911 [background-preinit] Version - HV000001: Hibernate Validator 8.0.1.Final
+[INFO ] 2024-04-21 18:17:23.924 [main] BlogControllerTest - Starting BlogControllerTest using Java 21.0.2 with PID 3375 (started by grhncnrbs in /Users/grhncnrbs/Desktop/Projects/blog)
+[INFO ] 2024-04-21 18:17:23.925 [main] BlogControllerTest - The following 1 profile is active: "dev"
+[INFO ] 2024-04-21 18:17:24.884 [main] SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+[INFO ] 2024-04-21 18:17:24.884 [main] TestDispatcherServlet - Initializing Servlet ''
+[INFO ] 2024-04-21 18:17:24.885 [main] TestDispatcherServlet - Completed initialization in 1 ms
+[INFO ] 2024-04-21 18:17:24.898 [main] BlogControllerTest - Started BlogControllerTest in 1.136 seconds (process running for 1.658)
+[INFO ] 2024-04-21 18:17:25.007 [main] BlogController - BlogController: updateBlogCall request received with body : UpdateBlogRequest(blogId=101, title=Spring Boot Blog Title., description=Spring Boot Blog Description., publish=true, userId=1001)
+[INFO ] 2024-04-21 18:17:44.318 [background-preinit] Version - HV000001: Hibernate Validator 8.0.1.Final
+[INFO ] 2024-04-21 18:17:44.331 [restartedMain] BlogApplication - Starting BlogApplication using Java 21.0.2 with PID 3390 (/Users/grhncnrbs/Desktop/Projects/blog/target/classes started by grhncnrbs in /Users/grhncnrbs/Desktop/Projects/blog)
+[INFO ] 2024-04-21 18:17:44.332 [restartedMain] BlogApplication - The following 1 profile is active: "dev"
+[INFO ] 2024-04-21 18:17:44.347 [restartedMain] DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2024-04-21 18:17:44.347 [restartedMain] DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2024-04-21 18:17:44.729 [restartedMain] RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 2024-04-21 18:17:44.750 [restartedMain] RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 3 JPA repository interfaces.
+[INFO ] 2024-04-21 18:17:45.064 [restartedMain] TomcatWebServer - Tomcat initialized with port 8080 (http)
+[INFO ] 2024-04-21 18:17:45.069 [restartedMain] Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2024-04-21 18:17:45.070 [restartedMain] StandardService - Starting service [Tomcat]
+[INFO ] 2024-04-21 18:17:45.070 [restartedMain] StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+[INFO ] 2024-04-21 18:17:45.087 [restartedMain] [/api] - Initializing Spring embedded WebApplicationContext
+[INFO ] 2024-04-21 18:17:45.087 [restartedMain] ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 740 ms
+[INFO ] 2024-04-21 18:17:45.227 [restartedMain] LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] 2024-04-21 18:17:45.252 [restartedMain] Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+[INFO ] 2024-04-21 18:17:45.265 [restartedMain] RegionFactoryInitiator - HHH000026: Second-level cache disabled
+[INFO ] 2024-04-21 18:17:45.350 [restartedMain] SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO ] 2024-04-21 18:17:45.363 [restartedMain] HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2024-04-21 18:17:45.437 [restartedMain] HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@352448a
+[INFO ] 2024-04-21 18:17:45.437 [restartedMain] HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2024-04-21 18:17:45.829 [restartedMain] JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO ] 2024-04-21 18:17:45.866 [restartedMain] LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 2024-04-21 18:17:46.159 [restartedMain] JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2024-04-21 18:17:46.571 [restartedMain] OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2024-04-21 18:17:46.575 [restartedMain] EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+[INFO ] 2024-04-21 18:17:46.613 [restartedMain] Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2024-04-21 18:17:46.620 [restartedMain] TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+[INFO ] 2024-04-21 18:17:46.629 [restartedMain] BlogApplication - Started BlogApplication in 2.45 seconds (process running for 2.769)
+[INFO ] 2024-04-21 18:17:46.857 [RMI TCP Connection(3)-192.168.1.34] [/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2024-04-21 18:17:46.857 [RMI TCP Connection(3)-192.168.1.34] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2024-04-21 18:17:46.858 [RMI TCP Connection(3)-192.168.1.34] DispatcherServlet - Completed initialization in 1 ms
+[INFO ] 2024-04-21 18:18:15.358 [http-nio-8080-exec-6] AbstractOpenApiResource - Init duration for springdoc-openapi is: 112 ms
+[INFO ] 2024-04-21 18:19:03.070 [http-nio-8080-exec-7] BlogController - BlogController: createBlogCall request received with body : org.grhncnrbs.blog.dto.CreateBlogRequest@bd765a6
+[INFO ] 2024-04-21 18:19:03.113 [http-nio-8080-exec-7] BlogController - BlogController: createBlogCall record saved successfully with blogId : 5
+[WARN ] 2024-04-21 18:46:18.797 [HikariPool-1 housekeeper] HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m33s56ms).
+[WARN ] 2024-04-21 19:02:45.224 [HikariPool-1 housekeeper] HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m26s333ms).
+[INFO ] 2024-04-21 19:03:16.582 [SpringApplicationShutdownHook] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2024-04-21 19:03:16.585 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 2024-04-21 19:03:16.586 [SpringApplicationShutdownHook] HikariDataSource - HikariPool-1 - Shutdown completed.
